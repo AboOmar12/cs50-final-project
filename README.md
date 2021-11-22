@@ -1,56 +1,48 @@
-# CS50 Final Project - Homework framework
+# Your motivational friend
 
-The project is a webpage where teachers can create assignments for students. The implementation is fairly simple, to keep the project scope in check. I wanted to make a project like this to expand my knowledge of Node JS and of techniques like buffer piping from database to client, role based authentications, etc.
+#### Video Demo:  <https://www.youtube.com/watch?v=k3QnFGiuipk&ab_channel=jehadmajed>
 
-Technologies used:
+#### Description:
 
-- Node JS
-- Express JS
-- bcryptjs
-- passport
-- sqlite3
-- ejs
-- other small libraries or packages
+-In the light of technological and material development, a new problem has arisen for us - humans - which is the subject of research by scientists and researchers, which is “procrastination, a decrease in the level of happiness in humans teenagers in particular".
+
+-From this point of view, a lack of human achievements appeared on the individual level in particular.
+I'm on this very simple site. I'm just giving an idea, no more. This means that this site if it is but in a deeper and larger way. It can be a global and cool site. 
+-And about this siteThe idea is to simply try to put two things and they are
+
+-1- Timer for achievements 2- Motivational methods,I think quotes are very good to motivate people
 
 ## How the webpage works?
+On this site, we have two bases
+The first is CSS and the second is HTML
+I did not put the javascript separately because I don't think there is a need for that and I was more comfortable with this method 
+And there is a little icon I added  it :)
+I use flask just for render page
+ABOUT BASE.HTML (
+Head includes bootstrap,jquery, title,icon, and fixing the width
 
-The idea is simple. The user can register either as student or teacher. During registration you need to enter these fields:
+body includes two things 1-js 2-HTML
 
-- Email
-- Name
-- Password: it is checked to match, must be at least 6 symbols long and is hashed after checks are done
-- Checkbox for what type of user you will be (student or teacher)
+1-1  js for tabs 
+1-2  js  for paragraphs 
+1-3  js for timer 
+1-4  js for quotes NOTE: i got a ready list Sorry for that :)
+2-1  html code for tabs 
+2-2  html code for paragraphs
+2-3  html code for timer
+2-4  html code for quotes 
 
-Student registration allows you to access student dashboard, where you can see created homework. Entering the homework you can upload a file. Once the teacher grades and reviews your submission it will appear instead of <input type="file">.
-
-For teachers, teacher dashboard is unlocked, where they can create a homework and see student's which submitted homework. When accessing the homework, teacher can download the submitted file and then write a review and grade it.
+finally, CSS 
+I think this one is very clear, nothing special maybe I used grid areas in the timer :)
 
 ### Routing
-
-Each route checks if the user is authenticated. It means if correct mail and password were supplied and what role it has. So for example a teacher cannot enter /students/homeworks/1 route. The same is for student, he cannot enter teacher dashboard route.
-
-### Sessions
-
-The webpage uses sessions to confirm that user is registered. Once the user logins, his credentials are checked with bcrypt and Passport JS library. Once everything passes a session is created (serialized and deserialized) and stored in the cookies. The server attaches user to subsequent requests, so the back-end can easily access the details, like roles: student, teacher.
-
-### Database
-
-Database stores all users, homework, student submissions. The tables, like student submissions uses foreign keys to relate users to submitted homework. Moreover, homework table uses foreign keys to relate the homework to a teacher.
-
+- i use flask to routeing  the website 
 ## Possible improvements
 
 As all applications this one can also be improved. Possible improvements:
 
-- Have administrator account which confirms user identity, so that student could not register as a teacher
-- Ability to change account details
-- Have a way for teacher to upload videos to explain the assignment
-- Notificaitons to email about new homeworks or submissions
-
-## How to launch application
-
-1. Check that you have Node version 8+
-2. Clone the code: `git clone https://github.com/RokasDie/cs50-final-project.git`
-3. Run command prompt in the folder and run `npm install` to install all dependencies
-4. Once installed run command `npm start`
-5. In your browser go to `localhost:3000`
-6. You are ready to go!
+-  more details in timer like make other Options (120,60,50,10,5)
+- make account and have database includes (user,password,how many minutes he/she work , how many rest)
+- make compare between users
+- make a list to do or cheack box 
+- make achivement record 
